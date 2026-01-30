@@ -50,7 +50,7 @@ function getParentFields(object, currentObject, fieldConfiguration) {
     if (fieldConfiguration.type === 'tag_group') {
         return [{
             parentField: object,
-            currentParentField: currentObject ?? {},
+            currentParentField: currentObject ?? { _tags: [] },
             objectToEdit: object[object._objecttype],
         }];
     } else if (!fieldConfiguration.parent_field_path?.length) {
