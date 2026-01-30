@@ -1,0 +1,66 @@
+plugin:
+  name: edit-info-updater
+  version: 1.0
+  url: https://github.com/programmfabrik/
+  displayname:
+    de-DE: Automatisches Aktualisieren von Bearbeitungsinformationen
+    en-US: Automatic updating of editing information
+  server:
+    api-version:
+      require: 1
+  l10n: l10n/edit-info-updater.csv
+
+base_config:
+  - name: editInfoUpdater
+    parameters:
+      object_types:
+        type: table
+        fields:
+        - name: name
+          type: text
+          position: 0
+        - name: fields
+          type: table
+          fields:
+            - name: type
+              type: select
+              options: ["field", "tag_group"]
+              position: 0
+            - name: parent_field_path
+              type: text
+              position: 1
+            - name: value_to_monitor
+              type: text
+              position: 2
+            - name: edited_by_field_name
+              type: text
+              position: 3
+            - name: edit_date_field_name
+              type: text
+              position: 4
+            - name: filter_function
+              type: text
+              position: 5
+          position: 1
+        position: 0
+
+callbacks:
+  db_pre_save:
+    steps:
+      - name: "Update edit info"
+        callback: updateEditInfo
+    callbacks:
+      updateEditInfo:
+        exec:
+          service: "node"
+          commands:
+            - prog: "node"
+              stdin:
+                type: body
+              stdout:
+                type: body
+              args:
+                - type: "value"
+                  value: "%_exec.pluginDir%/server/updateEditInfo.js"
+                - type: "value"
+                  value: "%info.json%"

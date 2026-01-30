@@ -1,0 +1,13 @@
+key,de-DE,en-US
+server.config.name.system.editInfoUpdater,Automatisches Aktualisieren von Bearbeitungsinformationen,Edit info updater
+server.config.parameter.system.editInfoUpdater.object_types.label,Objekttypen,Object types
+server.config.parameter.system.editInfoUpdater.object_types.name.label,Name des Objekttyps,Object type name
+server.config.parameter.system.editInfoUpdater.object_types.fields.label,Felder,Fields
+server.config.parameter.system.editInfoUpdater.object_types.fields.type.label,Typ,Type
+server.config.parameter.system.editInfoUpdater.object_types.fields.parent_field_path.label,Pfad zum übergeordneten Feld (leer wenn oberste Ebene),Path to parent field (empty if root level)
+server.config.parameter.system.editInfoUpdater.object_types.fields.value_to_monitor.label,"Pfad zum Feld bzw. ID der Taggruppe, das/die beobachtet werden soll","Path to field or ID of tag group to be monitored"
+server.config.parameter.system.editInfoUpdater.object_types.fields.edited_by_field_name.label,Name des Feldes 'Bearbeitet von',Name of field 'Edited by'
+server.config.parameter.system.editInfoUpdater.object_types.fields.edit_date_field_name.label,Name des Feldes 'Bearbeitungsdatum',Name of field 'Edit date'
+server.config.parameter.system.editInfoUpdater.object_types.fields.filter_function.label,Filterfunktion (JavaScript),Filter function (JavaScript)
+server.config.option.system.editInfoUpdater.type.field,Feld,Field
+server.config.option.system.editInfoUpdater.type.tag_group,Tag-Gruppe,Tag group
