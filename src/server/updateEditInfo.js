@@ -31,9 +31,12 @@ process.stdin.on('end', async () => {
 });
 
 async function processObject(object, currentObject, configuration, tagGroups) {
+    const objectConfiguration = getObjectConfiguration(object, configuration);
+    if (!objectConfiguration?.fields) return false;
+    
     let changed = false;
 
-    for (let fieldConfiguration of getObjectConfiguration(object, configuration).fields) {
+    for (let fieldConfiguration of objectConfiguration.fields) {
         for (let { parentField, currentParentField, objectToEdit } of getParentFields(object, currentObject, fieldConfiguration)) {
             if (hasChanged(parentField, currentParentField, fieldConfiguration, tagGroups)) {
                 setEditedBy(objectToEdit, fieldConfiguration);
