@@ -1,7 +1,7 @@
 plugin:
   name: edit-info-updater
   version: 1.0
-  url: https://github.com/programmfabrik/
+  url: https://github.com/programmfabrik/fylr-plugin-edit-info-updater
   displayname:
     de-DE: Automatisches Aktualisieren von Bearbeitungsinformationen
     en-US: Automatic updating of editing information
