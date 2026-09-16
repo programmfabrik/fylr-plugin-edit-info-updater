@@ -1,0 +1,10 @@
+server:
+  install:
+  - l10n/edit-info-updater.csv
+  bundles:
+    - out: server/updateEditInfo.js
+      sources:
+      - src/server/updateEditInfo.js
+
+zip_aliases:
+- EditInfoUpdater.zip
